@@ -1,0 +1,25 @@
+{
+  "name": "baseline",
+  "version": "0.1.0",
+  "description": "Database migration and versioning tool",
+  "main": "index.js",
+  "scripts": {
+    "test": "npm run test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nn1900/baseline.git"
+  },
+  "keywords": [
+    "database",
+    "migration",
+    "database",
+    "versioning"
+  ],
+  "author": "eric",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/nn1900/baseline/issues"
+  },
+  "homepage": "https://github.com/nn1900/baseline#readme"
+}
