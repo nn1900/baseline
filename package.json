@@ -21,5 +21,15 @@
   "bugs": {
     "url": "https://github.com/nn1900/baseline/issues"
   },
-  "homepage": "https://github.com/nn1900/baseline#readme"
+  "homepage": "https://github.com/nn1900/baseline#readme",
+  "dependencies": {
+    "es6-promise": "^3.0.2",
+    "js-yaml": "^3.4.6",
+    "mysql": "^2.10.0",
+    "yargs": "^3.31.0"
+  },
+  "devDependencies": {
+    "chai": "^3.4.1",
+    "chai-as-promised": "^5.1.0"
+  }
 }
