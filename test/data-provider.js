@@ -12,14 +12,12 @@ chai.use(require('chai-as-promised'));
 
 describe('data providers', function() {
 
-  describe('default data providers behavior', function() {
-    it('should throws error if getting non-existed data provider', function() {
-      expect(function() { getProvider('not_existed'); })
-        .to.throw(/has not been implemented yet/);
-    });
+  it('should throws error if getting non-existed data provider', function() {
+    expect(function() { getProvider('not_existed'); })
+      .to.throw(/has not been implemented yet/);
+  });
 
-    it('should successfully get the mysql data provider', function() {
-      getProvider('mysql').should.be.an('object');
-    });
+  it('should successfully get the mysql data provider', function() {
+    getProvider('mysql').should.be.an('object');
   });
 });

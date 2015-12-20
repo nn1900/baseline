@@ -2,7 +2,8 @@
 
 var chai = require('chai');
 var expect = require('chai').expect;
-var path = require('path');
+var pathutil = require('path');
+var fs = require('fs');
 var MySql = require('../lib/impl/mysql');
 
 /* polyfill Promise for older Node.js */
@@ -12,7 +13,7 @@ chai.use(require('chai-as-promised'));
 
 describe('mysql data provider', function() {
 
-  var conn = new MySql({
+  var mysql = new MySql({
     host: '127.0.01',
     user: 'root',
     password: 'pwd01!',
@@ -20,13 +21,55 @@ describe('mysql data provider', function() {
   });
 
   after(function(done) {
-    conn.dispose(done);
+    mysql.dispose(done);
   });
 
-  describe('connection test', function() {
-    it('should successfully connected to the database server', function() {
-      return conn.query('select 1 + 1 as x')
-        .should.eventually.have.deep.property('[0].x', 2);
-    });
+  it('should successfully connected to the database server', function() {
+    return mysql.query('select 1 + 1 as x')
+      .should.eventually.have.deep.property('[0].x', 2);
+  });
+
+  it('should return false if checking a non existed database', function() {
+    return mysql.doesDbExist('non_existed').should.eventually.be.false;
+  });
+
+  it('should return true if checking an existing database', function() {
+    return mysql.doesDbExist('information_schema').should.eventually.be.true;
+  });
+
+  it('should successfully create new database and drop it', function(done) {
+    mysql.createDb('not_existed').then(() => {
+      return mysql.doesDbExist('not_existed').then(res => {
+        expect(res).to.be.true;
+        return mysql.dropDb('not_existed').then(() => {
+          mysql.doesDbExist('not_existed').then(res => {
+            expect(res).to.be.false;
+            done();
+          });
+        });
+      });
+    }).catch(done);
+  });
+
+  it('should successfully backup a database', function(done) {
+    const path = './temp/test.backup.sql';
+    try { fs.statSync('./temp'); } catch (e) { fs.mkdirSync('./temp'); }
+    mysql.backupDb('test', path).then(function() {
+      expect(function() { fs.statSync(path); })
+        .to.not.throw(Error, /no such file or directory/);
+      try { fs.unlinkSync(path); } catch (e) {}
+      done();
+    }).catch(done);
+  });
+
+  it('should successfully dump data of a table', function(done) {
+    const path = './temp/costs-data.sql';
+    try { fs.statSync('./temp'); } catch (e) { fs.mkdirSync('./temp'); }
+    mysql.dumpTableData('test', 'costs', path).then(function() {
+      expect(function() { fs.statSync(path); })
+        .to.not.throw(Error, /no such file or directory/);
+      try { fs.unlinkSync(path); } catch (e) {}
+      done();
+    }).catch(done);
   });
 });

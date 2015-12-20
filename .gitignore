@@ -7,3 +7,6 @@ bower_components/
 .imdone/
 *.zip
 .idea/*
+tmp/
+temp/
+backups/
