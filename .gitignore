@@ -1,0 +1,9 @@
+node_modules
+npm-debug.log
+build/
+dist/
+bower_components/
+.DS_Store
+.imdone/
+*.zip
+.idea/*
