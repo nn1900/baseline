@@ -22,19 +22,21 @@ describe('config', function() {
 
     it('should throws error if config file not found', function() {
       return readFromFile('path_not_exists')
-        .should.be.rejectedWith(Error, /ENOENT: no such file or directory/); 
+        .should.be.rejectedWith(Error, /ENOENT: no such file or directory/);
     });
 
     it('should support json as config format', function() {
       return readFromFile(path.join(__dirname, './config/mysql.json'))
         .should.eventually.be.an('object')
-        .and.should.eventually.have.all.keys('host', 'port', 'user', 'password');
+        .and.should.eventually.contain.keys('host', 'port', 'user', 'password')
+        .and.should.eventually.have.deep.property('databases[0].name');
     });
 
     it('should support yaml as config format', function() {
       return readFromFile(path.join(__dirname, './config/mysql.yml'))
         .should.eventually.be.an('object')
-        .and.should.eventually.have.all.keys('host', 'port', 'user', 'password');
+        .and.should.eventually.contain.keys('host', 'port', 'user', 'password')
+        .and.should.eventually.have.deep.property('databases[0].name');
     });
   });
 });
