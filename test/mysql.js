@@ -62,6 +62,22 @@ describe('mysql data provider', function() {
     }).catch(done);
   });
 
+  it('should successfully restore a database', function(done) {
+    const path = './temp/test.backup.sql';
+    try { fs.statSync('./temp'); } catch (e) { fs.mkdirSync('./temp'); }
+    mysql.backupDb('test', path).then(function() {
+      expect(function() { fs.statSync(path); })
+        .to.not.throw(Error, /no such file or directory/);
+      return mysql.restoreDb('test2', path).then(function() {
+        return mysql.doesDbExist('test2').then(res => {
+          expect(res).to.be.true;
+          try { fs.unlinkSync(path); } catch (e) {}
+          done();
+        });
+      });
+    }).catch(done);
+  });
+
   it('should successfully dump data of a table', function(done) {
     const path = './temp/costs-data.sql';
     try { fs.statSync('./temp'); } catch (e) { fs.mkdirSync('./temp'); }
