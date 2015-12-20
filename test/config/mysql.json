@@ -3,7 +3,8 @@
   "port": 3306,
   "user": "root",
   "password": "pwd01!",
-  "change_log_table_name": "_change_log", 
+  "change_log_table_name": "_change_log",
+  "dialect": "mysql", 
   "databases": [
     { "name": "onboard" },
     { "name": "test" }
