@@ -1,2 +1,0 @@
-ALTER TABLE `role_permission` ADD CONSTRAINT `fk_role_permission_permission_id` FOREIGN KEY (`permission_id`) REFERENCES `permission` (`permission_id`)  ON DELETE NO ACTION ON UPDATE NO ACTION;
-ALTER TABLE `role_permission` ADD CONSTRAINT `fk_role_permission_role_id` FOREIGN KEY (`role_id`) REFERENCES `role` (`role_id`)  ON DELETE NO ACTION ON UPDATE NO ACTION;

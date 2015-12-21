@@ -1,1 +1,0 @@
-CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `test`.`sales_view` AS select `test`.`sales`.`empID` AS `empID`,`test`.`sales`.`yr` AS `yr`,`test`.`sales`.`sales` AS `sales`,`test`.`sales`.`flag` AS `flag` from `test`.`sales` where (`test`.`sales`.`yr` > 2005)

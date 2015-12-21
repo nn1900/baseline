@@ -1,1 +1,0 @@
-ALTER TABLE `product` ADD UNIQUE INDEX `cid_UNIQUE` USING BTREE(`cid`);

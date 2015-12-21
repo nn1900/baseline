@@ -1,3 +1,0 @@
-ALTER TABLE `rendering_media_item` ADD CONSTRAINT `fk_rendering_media_item_block_id` FOREIGN KEY (`block_id`) REFERENCES `rendering_block` (`id`)  ON DELETE NO ACTION ON UPDATE NO ACTION;
-ALTER TABLE `rendering_media_item` ADD CONSTRAINT `fk_rendering_media_item_size_spec` FOREIGN KEY (`size_spec`) REFERENCES `image_size_spec` (`id`)  ON DELETE NO ACTION ON UPDATE NO ACTION;
-ALTER TABLE `rendering_media_item` ADD CONSTRAINT `fk_rending_media_item_id` FOREIGN KEY (`media_item_id`) REFERENCES `media_library_item` (`id`)  ON DELETE NO ACTION ON UPDATE NO ACTION;

@@ -1,1 +1,0 @@
-ALTER TABLE `image_size_spec` ADD UNIQUE INDEX `cid_UNIQUE` USING BTREE(`cid`);

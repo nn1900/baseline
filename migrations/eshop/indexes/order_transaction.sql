@@ -1,1 +1,0 @@
-ALTER TABLE `order_transaction` ADD UNIQUE INDEX `transaction_no_UNIQUE` USING BTREE(`transaction_no`);

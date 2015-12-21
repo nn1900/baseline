@@ -1,1 +1,0 @@
-ALTER TABLE `customer_login` ADD CONSTRAINT `fk_user_login_record_customer_id` FOREIGN KEY (`customer_id`) REFERENCES `customer` (`id`)  ON DELETE NO ACTION ON UPDATE NO ACTION;

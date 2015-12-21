@@ -1,1 +1,0 @@
-ALTER TABLE `city` ADD CONSTRAINT `fk_city_province_id` FOREIGN KEY (`province_id`) REFERENCES `province` (`id`)  ON DELETE NO ACTION ON UPDATE NO ACTION;

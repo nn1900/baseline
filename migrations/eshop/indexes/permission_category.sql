@@ -1,1 +1,0 @@
-ALTER TABLE `permission_category` ADD UNIQUE INDEX `name_UNIQUE` USING BTREE(`name`);

@@ -1,1 +1,0 @@
-ALTER TABLE `product_image` ADD CONSTRAINT `fk_product_image_product_id` FOREIGN KEY (`product_id`) REFERENCES `product` (`id`)  ON DELETE NO ACTION ON UPDATE NO ACTION;

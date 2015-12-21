@@ -1,2 +1,0 @@
-ALTER TABLE `product` ADD CONSTRAINT `fk_product_category_id` FOREIGN KEY (`category_id`) REFERENCES `category` (`id`)  ON DELETE NO ACTION ON UPDATE NO ACTION;
-ALTER TABLE `product` ADD CONSTRAINT `fk_product_product_place` FOREIGN KEY (`production_place`) REFERENCES `production_place` (`id`)  ON DELETE NO ACTION ON UPDATE NO ACTION;
