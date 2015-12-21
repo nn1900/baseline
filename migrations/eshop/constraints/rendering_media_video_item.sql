@@ -1,0 +1,1 @@
+ALTER TABLE `rendering_media_video_item` ADD CONSTRAINT `fk_rendering_media_video_item_id` FOREIGN KEY (`item_id`) REFERENCES `rendering_media_item` (`id`)  ON DELETE NO ACTION ON UPDATE NO ACTION;

@@ -1,0 +1,1 @@
+ALTER TABLE `product_detail` ADD CONSTRAINT `fk_product_detail_product_id` FOREIGN KEY (`product_id`) REFERENCES `product` (`id`)  ON DELETE NO ACTION ON UPDATE NO ACTION;

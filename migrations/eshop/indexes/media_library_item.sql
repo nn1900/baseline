@@ -1,0 +1,1 @@
+ALTER TABLE `media_library_item` ADD UNIQUE INDEX `item_id_UNIQUE` USING BTREE(`item_id`);

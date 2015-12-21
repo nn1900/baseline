@@ -1,0 +1,1 @@
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `test`.`costs_view` AS select `test`.`costs`.`date` AS `date`,`test`.`costs`.`source` AS `source`,`test`.`costs`.`item` AS `item`,`test`.`costs`.`cost` AS `cost`,`test`.`costs`.`click` AS `click` from `test`.`costs` where (`test`.`costs`.`click` > 1000)

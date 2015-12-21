@@ -1,0 +1,1 @@
+ALTER TABLE `rendering_block` ADD UNIQUE INDEX `identifier_UNIQUE` USING BTREE(`identifier`);

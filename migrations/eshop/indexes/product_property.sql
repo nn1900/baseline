@@ -1,0 +1,1 @@
+ALTER TABLE `product_property` ADD UNIQUE INDEX `UQ_product_property` USING BTREE(`category_id`, `property_name`);

@@ -1,0 +1,1 @@
+ALTER TABLE `customer_oauth_binding` ADD CONSTRAINT `fk_user_oauth_binding` FOREIGN KEY (`customer_id`) REFERENCES `customer` (`id`)  ON DELETE NO ACTION ON UPDATE NO ACTION;

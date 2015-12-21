@@ -1,0 +1,1 @@
+ALTER TABLE `order_transaction` ADD CONSTRAINT `fk_order_transaction_order_id` FOREIGN KEY (`order_id`) REFERENCES `order` (`id`)  ON DELETE NO ACTION ON UPDATE NO ACTION;

@@ -1,0 +1,1 @@
+ALTER TABLE `product_property_value_option` ADD INDEX `idx_property_value_option_property_id` USING BTREE(`property_id`);

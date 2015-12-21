@@ -1,0 +1,1 @@
+ALTER TABLE `role` ADD UNIQUE INDEX `name_UNIQUE` USING BTREE(`name`);

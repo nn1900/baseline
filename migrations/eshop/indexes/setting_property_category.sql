@@ -1,0 +1,1 @@
+ALTER TABLE `setting_property_category` ADD UNIQUE INDEX `name_UNIQUE` USING BTREE(`name`);

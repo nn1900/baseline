@@ -1,0 +1,1 @@
+ALTER TABLE `media_library_item` ADD CONSTRAINT `fk_media_library_item_folder_id` FOREIGN KEY (`folder_id`) REFERENCES `media_library_folder` (`id`)  ON DELETE NO ACTION ON UPDATE NO ACTION;

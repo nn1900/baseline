@@ -1,0 +1,1 @@
+ALTER TABLE `category` ADD CONSTRAINT `fk_product_category_parent_category_id` FOREIGN KEY (`parent_category_id`) REFERENCES `category` (`id`)  ON DELETE NO ACTION ON UPDATE NO ACTION;

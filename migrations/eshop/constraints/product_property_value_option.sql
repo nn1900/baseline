@@ -1,0 +1,1 @@
+ALTER TABLE `product_property_value_option` ADD CONSTRAINT `fk_property_value_option_property_id` FOREIGN KEY (`property_id`) REFERENCES `product_property` (`id`)  ON DELETE NO ACTION ON UPDATE NO ACTION;

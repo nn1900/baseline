@@ -1,0 +1,1 @@
+ALTER TABLE `reset_password_request` ADD UNIQUE INDEX `token_UNIQUE` USING BTREE(`token`);

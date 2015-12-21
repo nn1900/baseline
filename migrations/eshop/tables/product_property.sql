@@ -1,0 +1,20 @@
+CREATE TABLE `eshop`.`product_property` (
+  `id` int(11) NOT NULL AUTO_INCREMENT, 
+  `category_id` int(11) NOT NULL, 
+  `property_name` varchar(45) NOT NULL, 
+  `display_name` varchar(45), 
+  `property_type` int(11) NOT NULL, 
+  `value_type` int(11) NOT NULL, 
+  `value_unit` int(11), 
+  `value_range_from` varchar(30), 
+  `value_range_to` varchar(30), 
+  `default_value` varchar(45), 
+  `is_key_property` tinyint(1) NOT NULL, 
+  `is_required` tinyint(1) NOT NULL, 
+  `is_searchable` tinyint(1) NOT NULL, 
+  `is_range_searchable` tinyint(1) NOT NULL, 
+  `auto_range` tinyint(1) NOT NULL, 
+  `search_range` varchar(500), 
+  `sort_order` int(11) NOT NULL, 
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET utf8 COLLATE utf8_general_ci;

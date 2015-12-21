@@ -1,0 +1,1 @@
+ALTER TABLE `coupon` ADD UNIQUE INDEX `code_UNIQUE` USING BTREE(`code`);

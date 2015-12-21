@@ -1,0 +1,2 @@
+ALTER TABLE `district` ADD CONSTRAINT `fk_district_city_id` FOREIGN KEY (`city_id`) REFERENCES `city` (`id`)  ON DELETE NO ACTION ON UPDATE NO ACTION;
+ALTER TABLE `district` ADD CONSTRAINT `fk_district_province_id` FOREIGN KEY (`province_id`) REFERENCES `province` (`id`)  ON DELETE NO ACTION ON UPDATE NO ACTION;

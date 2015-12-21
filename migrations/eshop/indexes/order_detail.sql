@@ -1,0 +1,1 @@
+ALTER TABLE `order_detail` ADD INDEX `idx_customer_email` USING BTREE(`customer_email`);

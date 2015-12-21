@@ -1,0 +1,1 @@
+ALTER TABLE `product_unit` ADD UNIQUE INDEX `name_UNIQUE` USING BTREE(`name`);

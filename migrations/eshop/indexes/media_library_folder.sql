@@ -1,0 +1,1 @@
+ALTER TABLE `media_library_folder` ADD UNIQUE INDEX `node_id_UNIQUE` USING BTREE(`node_id`);
