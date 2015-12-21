@@ -26,6 +26,7 @@
     "change-case": "^2.3.1",
     "es6-promise": "^3.0.2",
     "js-yaml": "^3.4.6",
+    "mkdirp": "^0.5.1",
     "mysql": "^2.10.0",
     "yargs": "^3.31.0"
   },

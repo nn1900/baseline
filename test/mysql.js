@@ -37,6 +37,14 @@ describe('mysql data provider', function() {
     return mysql.doesDbExist('information_schema').should.eventually.be.true;
   });
 
+  it('should return false if checking a non existed table', function() {
+    return mysql.doesTableExist('test', 'non_existed').should.eventually.be.false;
+  });
+
+  it('should return true if checking an existing table', function() {
+    return mysql.doesTableExist('test', 'costs').should.eventually.be.true;
+  });
+
   it('should successfully create new database and drop it', function(done) {
     mysql.createDb('not_existed').then(() => {
       return mysql.doesDbExist('not_existed').then(res => {
@@ -94,6 +102,13 @@ describe('mysql data provider', function() {
       .should.eventually.deep.have.property('[0]', 'user_id');
   });
 
+  it('should get the all the table infos', function() {
+    const promise = mysql.getTables('eshop', ['_change_log']);
+    return Promise.all([
+      promise.should.eventually.have.length.at.least(1)
+    ]);
+  });
+
   it('should get the table info of a table', function() {
     const promise = mysql.getTable('eshop', 'user');
     return Promise.all([
@@ -113,5 +128,17 @@ describe('mysql data provider', function() {
   it('should successfully export table schema', function() {
     return mysql.exportTableSchema('eshop', 'user')
       .should.eventually.be.a('string').contain('CREATE TABLE');
+  });
+
+  it('should get the all the view names', function() {
+    const promise = mysql.getViews('test');
+    return Promise.all([
+      promise.should.eventually.have.length.at.least(1)
+    ]);
+  });
+
+  it('should get the view definition of the given view', function() {
+    return mysql.exportViewDefinition('test', 'costs_view')
+      .should.eventually.contain('CREATE ALGORITHM');
   });
 });

@@ -3,7 +3,7 @@
 var chai = require('chai');
 var expect = require('chai').expect;
 var path = require('path');
-var getProvider = require('../lib/getProvider');
+var getProvider = require('../lib/factory').getProvider;
 
 /* polyfill Promise for older Node.js */
 require('chai').should();
