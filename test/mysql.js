@@ -88,4 +88,30 @@ describe('mysql data provider', function() {
       done();
     }).catch(done);
   });
+
+  it('should get the primary keys of a table', function() {
+    return mysql.getPrimaryKeys('eshop', 'user')
+      .should.eventually.deep.have.property('[0]', 'user_id');
+  });
+
+  it('should get the table info of a table', function() {
+    const promise = mysql.getTable('eshop', 'user');
+    return Promise.all([
+      promise.should.eventually.have.property('tableSchema', 'eshop'),
+      promise.should.eventually.have.property('tableName', 'user')
+    ]);
+  });
+
+  it('should get the columns of table', function() {
+    const promise = mysql.getTableColumns('eshop', 'user');
+    return Promise.all([
+      promise.should.eventually.have.length.of.at.least(1),
+      promise.should.eventually.have.deep.property('[0].columnName', 'user_id')
+    ]);
+  });
+
+  it('should successfully export table schema', function() {
+    return mysql.exportTableSchema('eshop', 'user')
+      .should.eventually.be.a('string').contain('CREATE TABLE');
+  });
 });

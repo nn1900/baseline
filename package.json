@@ -23,6 +23,7 @@
   },
   "homepage": "https://github.com/nn1900/baseline#readme",
   "dependencies": {
+    "change-case": "^2.3.1",
     "es6-promise": "^3.0.2",
     "js-yaml": "^3.4.6",
     "mysql": "^2.10.0",
