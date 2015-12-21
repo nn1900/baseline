@@ -10,3 +10,5 @@ bower_components/
 tmp/
 temp/
 backups/
+migrations/
+out/
