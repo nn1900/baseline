@@ -12,3 +12,4 @@ temp/
 backups/
 migrations/
 out/
+.baselinerc
