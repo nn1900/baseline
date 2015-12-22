@@ -24,9 +24,12 @@
   "homepage": "https://github.com/nn1900/baseline#readme",
   "dependencies": {
     "change-case": "^2.3.1",
+    "colors": "^1.1.2",
     "es6-promise": "^3.0.2",
+    "glob": "^6.0.1",
     "js-yaml": "^3.4.6",
     "mkdirp": "^0.5.1",
+    "moment": "^2.10.6",
     "mysql": "^2.10.0",
     "yargs": "^3.31.0"
   },
