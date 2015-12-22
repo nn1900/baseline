@@ -2,9 +2,12 @@
   "name": "baseline",
   "version": "0.1.0",
   "description": "Database migration and versioning tool",
-  "main": "index.js",
+  "preferGlobal": true,
+  "bin": {
+    "baseline": "index.js"
+  },
   "scripts": {
-    "test": "npm run test"
+    "test": "mocha"
   },
   "repository": {
     "type": "git",
