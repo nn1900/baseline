@@ -35,7 +35,7 @@ function main(config) {
     }
 
     if (map[dbConfig.name.toLowerCase()]) {
-      log.error('Config error: database \'%s\' already exists. ');
+      log.error('Config error: database \'%s\' already exists. ', dbConfig.name);
       return;
     }
 
