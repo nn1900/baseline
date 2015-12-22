@@ -60,8 +60,6 @@ function main(config) {
     })
   } else if (/^up$/i.test(options.command)) {
     up(config);
-  } else {
-    log.error('Error: unknown command \'%s\'', options.command);
   }
 }
 
