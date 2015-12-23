@@ -12,7 +12,7 @@ However, baseline also supports other scenarios such as you team (probably a ded
 # Install & Usage
 Baseline is a CLI tool that you could install via npm as below:
 ```bash
-  npm install -g baseline
+  npm install -g node-baseline
 ```
 
 _Note: this tool requires nodejs version 4.0.0 or above._
