@@ -157,7 +157,7 @@ module.exports = {
 ```
 
 # CHANGELOG
-[CHANGELOG](./CHANGELOG)
+[CHANGELOG](./CHANGELOG.md)
 
 # License
 [MIT License](./LICENSE)
