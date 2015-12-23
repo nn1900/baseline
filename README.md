@@ -7,7 +7,7 @@ these change scripts into your version control system such as git.
 
 # Use Case
 Typically, when you use a database-first development approach, your team want to keep local development databases and want to keep track of the changes collaboratively w/ each other, then baseline could help.
-However, baseline also supports other scenarios such as you team (probably a dedicated database team) is maintaining a shared database for development.
+However, baseline also supports other scenarios such as you team (probably a dedicated database team) is maintaining a shared database for development, you want to apply the changes to the database in production, etc. 
 
 # Install & Usage
 Baseline is a CLI tool that you could install via npm as below:

@@ -1,6 +1,6 @@
 {
   "name": "node-baseline",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Database migration and versioning tool",
   "preferGlobal": true,
   "bin": {
