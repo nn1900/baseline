@@ -1,7 +1,7 @@
 {
   "name": "node-baseline",
-  "version": "0.1.2",
-  "description": "Database migration and versioning tool",
+  "version": "0.1.3",
+  "description": "A simple database migration and versioning tool",
   "preferGlobal": true,
   "bin": {
     "baseline": "index.js"

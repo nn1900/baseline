@@ -6,16 +6,16 @@ you can add the database schema (tables, views, indexes, constraints, etc. ) exp
 these change scripts into your version control system such as git.
 
 # Use Case
-Typically, when you use a database-first development approach, your team want to keep local development databases and want to keep track of the changes collaboratively w/ each other, then baseline could help.
+Typically, when you use a database-first development approach, your team want to keep local development databases and want to keep track and sync of the changes collaboratively w/ each other, then baseline could help.
 However, baseline also supports other scenarios such as you team (probably a dedicated database team) is maintaining a shared database for development, you want to apply the changes to the database in production, etc.
 
 # Install & Usage
-Baseline is a CLI tool that you could install via npm as below:
+baseline is a CLI tool that could be installed via npm as below:
 ```bash
   npm install -g node-baseline
 ```
 
-_Note: this tool requires nodejs version 4.0.0 or above._
+___Note: this tool requires nodejs version 4.0.0 or above.___
 
 Then, type `baseline --help` to see how to use it as below:
 
@@ -37,7 +37,7 @@ Copyright 2015, MIT licensed.
 ```
 
 You have to create a configuration file for the databases that you want to add baseline support to.
-Basically, you can use `--config` option or `.baselinerc` in the working directory to specify the required configurations. The config file support _YAML_, _JSON_ and _node module_ formats whichever way you choose for that. See the sample configuration files below.
+Basically, you can use `--config` option or `.baselinerc` in the working directory to specify the required configurations. The config file supports _YAML_, _JSON_ and _node module_ formats whichever way you choose for that. See the sample configuration files below.
 
 ## Init
 First, use the `init` command to integrate your database with baseline, e.g.,
@@ -49,7 +49,7 @@ or without the `--config` option if there is a `.baselinerc` configuration file 
 baseline init
 ```
 
-When the init command executed successfully, baseline will create the `_change_log` table in the database and then export all the necessary schema of the database, including tables, indexes, constraints, views, etc., and an empty `changes` directory where your change scripts reside. All these files will go to the corresponding sub directories under the configured `rootPath` scoped by the database name. For example:
+When the init command executed successfully, baseline will create the `_change_log` table in the database and then export all the necessary schema of the database, including tables, indexes, constraints, views, etc., and an empty `changes` directory where your change scripts reside. All these files will go to the corresponding sub directories scoped by the database name under the configured `rootPath`. For example:
 ```
 temp/db/test
 ├── changes
@@ -74,9 +74,9 @@ or without the `--config` option if there is a `.baselinerc` configuration file 
 ```bash
 baseline up
 ```
-Each time a database is updated by `up` command, it will be backed up first so that the database can be restored in case error occurs while updating. When error indeed occurs, just fix it and re-execute the `up` command.
+Each time a database is updated by `up` command, it will be backed up firstly so that the database can be restored in case any error occurs while updating. When error indeed occurs, just fix it and re-execute the `up` command.
 
-___Note___: _change scripts are typically not intended to be changed after applied to database and even after committed to version control system. If something is changed unexpected by some change scripts, don't worry, but just apply another change scripts._
+___Note___: _change scripts are typically not intended to be changed after being applied to database and even after being committed to version control system. If something is changed unexpectedly by some change scripts, don't worry, but just append and apply another new change scripts._
 
 ## Rebase
 By rebasing, baseline will treat the current database as a fresh new one and re-integrate w/ it from a new start point. You can rebase the database at any time you want by using the `init` command with `--force	` option:
@@ -100,7 +100,7 @@ baseline is designed and implemented with team collaboration in mind. The typica
 - B issues `baseline up` to apply the changes from A
 - ...
 
-However, there's a caveat here that when before one developer add the change scripts to the `changes` directory, he/she must first pull the change scripts from others first, and then add and test the changes scripts before commit.
+However, there's a caveat here that when before one developer adds the change scripts to the `changes` directory, he/she __must__ first pull the change scripts from others first, and then adds and tests the changes scripts before commit.
 
 # Sample config files
 
@@ -155,3 +155,9 @@ module.exports = {
 };
 
 ```
+
+# CHANGELOG
+[CHANGELOG](./CHANGELOG)
+
+# License
+[MIT License](./LICENSE)
