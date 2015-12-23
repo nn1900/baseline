@@ -7,7 +7,7 @@ these change scripts into your version control system such as git.
 
 # Use Case
 Typically, when you use a database-first development approach, your team want to keep local development databases and want to keep track of the changes collaboratively w/ each other, then baseline could help.
-However, baseline also supports other scenarios such as you team (probably a dedicated database team) is maintaining a shared database for development, you want to apply the changes to the database in production, etc. 
+However, baseline also supports other scenarios such as you team (probably a dedicated database team) is maintaining a shared database for development, you want to apply the changes to the database in production, etc.
 
 # Install & Usage
 Baseline is a CLI tool that you could install via npm as below:
@@ -74,6 +74,9 @@ or without the `--config` option if there is a `.baselinerc` configuration file 
 ```bash
 baseline up
 ```
+Each time a database is updated by `up` command, it will be backed up first so that the database can be restored in case error occurs while updating. When error indeed occurs, just fix it and re-execute the `up` command.
+
+___Note___: _change scripts are typically not intended to be changed after applied to database and even after committed to version control system. If something is changed unexpected by some change scripts, don't worry, but just apply another change scripts._
 
 ## Rebase
 By rebasing, baseline will treat the current database as a fresh new one and re-integrate w/ it from a new start point. You can rebase the database at any time you want by using the `init` command with `--force	` option:
