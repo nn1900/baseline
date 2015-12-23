@@ -18,7 +18,7 @@ var colors = require('colors/safe');
  */
 function main(config) {
   if (!config.databases) {
-    log.error('Config error: at lease one database should be configured. ');
+    log.error('Config error: at least one database should be configured. ');
     return;
   }
 
