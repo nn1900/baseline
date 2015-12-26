@@ -10,6 +10,7 @@ var stat = require('./lib/utils/stat');
 var init = require('./lib/commands/init');
 var up = require('./lib/commands/up');
 var colors = require('colors/safe');
+var factory = require('./lib/factory');
 
 /**
  * the main entry point for the program.
@@ -27,6 +28,13 @@ function main(config) {
   for (var i = 0; i < config.databases.length; i++) {
     var dbConfig = getMergedDbConfig(config.databases[i], config);
     config.databases[i] = dbConfig;
+
+    try {
+      factory.getProvider(dbConfig.dialect);
+    } catch (e) {
+      log.error('Error: %s', e.message);
+      return;
+    }
 
     // check the required information of database config.
     if (!dbConfig.name) {

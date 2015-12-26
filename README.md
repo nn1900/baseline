@@ -1,3 +1,5 @@
+___Note: as of the current release, only mysql database is supported. But support for other databases has been planed.___
+
 # Description
 A simple database migration and versioning tool. Basically, it works by maintaining change logs in the
 database, and incrementally updating the database using user supplied change scripts. You can craft the
