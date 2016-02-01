@@ -64,10 +64,12 @@ function main(config) {
 
   if (/^init$/i.test(options.command)) {
     init(config, options.force).catch(e => {
-      log.error(e.message);
+      log.error(e.stack);
     })
   } else if (/^up$/i.test(options.command)) {
-    up(config);
+    up(config).catch(e => {
+      log.error(e.stack);
+    });
   }
 }
 
