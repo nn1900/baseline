@@ -1,3 +1,5 @@
+[![NPM](https://nodei.co/npm/node-baseline.png?downloads=true&downloadRank=true&stars=true)](https://nodei.co/npm/node-baseline/)
+
 ___Note: as of the current release, only mysql database is supported. But support for other databases has been planned.___
 
 # Description
