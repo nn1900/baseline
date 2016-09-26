@@ -81,7 +81,10 @@ if (!/^(init|up)$/i.test(options.command)) {
 // if the config option is not specified, try to load the
 // .baselinerc from the current working directory.
 if (!options.config) {
-  options.config = pathutil.join(process.cwd(), '.baselinerc');
+  var configFile = options.production ?
+    '.baselinerc.production' :
+    '.baselinerc';
+  options.config = pathutil.join(process.cwd(), configFile);
 
   // check if the .baselinerc config file exists
   stat(options.config).then(() => {
@@ -90,7 +93,7 @@ if (!options.config) {
       main(result);
     }).catch(e => {
       log.error(
-        'Error load config from .baselinerc: %s',
+        `Error load config from ${configFile}: %s`,
         e.message
       );
     });
