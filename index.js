@@ -9,6 +9,7 @@ var readFromFile = require('./lib/config').readFromFile;
 var stat = require('./lib/utils/stat');
 var init = require('./lib/commands/init');
 var up = require('./lib/commands/up');
+var backup = require('./lib/commands/backup');
 var colors = require('colors/safe');
 var factory = require('./lib/factory');
 
@@ -62,6 +63,12 @@ function main(config) {
     map[dbConfig.name.toLowerCase()] = dbConfig;
   }
 
+  if (options.db) {
+    config.databases = config.databases.filter(
+      x => x.name === options.db
+    );
+  }
+
   if (/^init$/i.test(options.command)) {
     init(config, options.force).catch(e => {
       log.error(e.stack);
@@ -70,10 +77,14 @@ function main(config) {
     up(config).catch(e => {
       log.error(e.stack);
     });
+  } else if (/^backup/i.test(options.command)) {
+    backup(config).catch(e => {
+      log.error(e.stack);
+    });
   }
 }
 
-if (!/^(init|up)$/i.test(options.command)) {
+if (!/^(init|up|backup)$/i.test(options.command)) {
   log.error('Error: unknown command \'%s\'', options.command);
   return;
 }
