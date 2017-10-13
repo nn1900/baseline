@@ -10,3 +10,5 @@ databases:
     dialect: oracle
     user: user
     password: password
+    backup: true
+    backupDir: /backup/dir

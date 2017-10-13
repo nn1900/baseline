@@ -6,7 +6,16 @@
   "password": "secret",
   "dialect": "mysql",
   "databases": [
-    { "name": "test1" },
-    { "name": "test2", "dialect": "oracle", "user": "user", "password": "..." }
+    {
+      "name": "test1"
+    },
+    {
+      "name": "test2",
+      "dialect": "oracle",
+      "user": "user",
+      "password": "...",
+      "backup": true,
+      "backupDir": "/backupDir"
+    }
   ]
 }

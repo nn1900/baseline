@@ -8,6 +8,13 @@ module.exports = {
   dialect: 'mysql',
   databases: [
     { name: 'test1' },
-    { name: 'test2', dialect: 'oracle', user: 'user', password: '...' }
+    {
+      name: 'test2',
+      dialect: 'oracle',
+      user: 'user',
+      password: '...',
+      backup: true,
+      backupDir: '/backup/dir'
+    }
   ]
 };
