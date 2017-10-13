@@ -122,7 +122,8 @@ databases:
     dialect: oracle
     user: user
     password: password
-
+    backup: true
+    backupDir: /backup/dir
 ```
 
 ## JSON
@@ -135,8 +136,17 @@ databases:
   "password": "secret",
   "dialect": "mysql",
   "databases": [
-    { "name": "test1" },
-    { "name": "test2", "dialect": "oracle", "user": "user", "password": "..." }
+    {
+      "name": "test1"
+    },
+    {
+      "name": "test2",
+      "dialect": "oracle",
+      "user": "user",
+      "password": "...",
+      "backup": true,
+      "backupDir": "/backupDir"
+    }
   ]
 }
 ```
@@ -154,10 +164,16 @@ module.exports = {
   dialect: 'mysql',
   databases: [
     { name: 'test1' },
-    { name: 'test2', dialect: 'oracle', user: 'user', password: '...' }
+    {
+      name: 'test2',
+      dialect: 'oracle',
+      user: 'user',
+      password: '...',
+      backup: true,
+      backupDir: '/backup/dir'
+    }
   ]
 };
-
 ```
 
 # CHANGELOG
