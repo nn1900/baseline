@@ -1,0 +1,68 @@
+Arguments: 
+  /usr/local/bin/node /usr/local/Cellar/yarn/1.9.4/libexec/bin/yarn.js install
+
+PATH: 
+  /Library/Frameworks/Python.framework/Versions/2.7/bin:/Library/Frameworks/Python.framework/Versions/3.6/bin:/Users/eric/bin/Sencha/Cmd/6.5.0.180:/usr/local/sphinx/2.2.3-beta/bin:/Users/eric/Downloads/dev/gradle-2.5/bin:/Users/eric/Downloads/dev/pssql-0.03:/usr/local/bin:/usr/local/sbin:/Users/eric/Library/Android/sdk/tools/bin:/Users/eric/Library/Android/sdk/tools:/Users/eric/Library/Android/sdk/platform-tools:/usr/local/share/npm/bin:/usr/local/apache-maven-3.3.9/bin:/Users/eric/Library/Google/flutter/bin:/usr/local/go/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/go/bin:/usr/local/share/dotnet:/Library/Frameworks/Python.framework/Versions/2.7/bin:/Library/Frameworks/Python.framework/Versions/3.6/bin:/Users/eric/bin/Sencha/Cmd/6.5.0.180:/usr/local/sphinx/2.2.3-beta/bin:/Users/eric/Downloads/dev/gradle-2.5/bin:/Users/eric/Downloads/dev/pssql-0.03:/usr/local/sbin:/Users/eric/Library/Android/sdk/tools/bin:/Users/eric/Library/Android/sdk/tools:/Users/eric/Library/Android/sdk/platform-tools:/usr/local/share/npm/bin:/usr/local/apache-maven-3.3.9/bin:/Users/eric/Library/Google/flutter/bin:/Users/eric/.rvm/bin:/Users/eric/.rvm/bin
+
+Yarn version: 
+  1.9.4
+
+Node version: 
+  10.13.0
+
+Platform: 
+  darwin x64
+
+Trace: 
+  Error: EACCES: permission denied, unlink '/Users/eric/Documents/projects/github/baseline/node_modules/argparse/index.js'
+
+npm manifest: 
+  {
+    "name": "node-baseline",
+    "version": "0.2.3",
+    "description": "A simple database migration and versioning tool",
+    "preferGlobal": true,
+    "bin": {
+      "baseline": "index.js"
+    },
+    "scripts": {
+      "test": "mocha"
+    },
+    "repository": {
+      "type": "git",
+      "url": "git+https://github.com/nn1900/baseline.git"
+    },
+    "keywords": [
+      "database",
+      "migration",
+      "database",
+      "versioning"
+    ],
+    "author": "eric",
+    "license": "MIT",
+    "bugs": {
+      "url": "https://github.com/nn1900/baseline/issues"
+    },
+    "homepage": "https://github.com/nn1900/baseline#readme",
+    "dependencies": {
+      "change-case": "^2.3.1",
+      "colors": "^1.1.2",
+      "es6-promise": "^3.0.2",
+      "glob": "^6.0.1",
+      "js-yaml": "^3.4.6",
+      "mkdirp": "^0.5.1",
+      "moment": "^2.10.6",
+      "mysql": "^2.10.0",
+      "yargs": "^3.31.0"
+    },
+    "devDependencies": {
+      "chai": "^3.4.1",
+      "chai-as-promised": "^5.1.0"
+    }
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile
