@@ -78,7 +78,7 @@ function main(config) {
       log.error(e.stack);
     });
   } else if (/^backup/i.test(options.command)) {
-    backup(config).catch(e => {
+    backup(config, options.output, options.outputFile).catch(e => {
       log.error(e.stack);
     });
   }
