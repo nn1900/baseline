@@ -13,3 +13,4 @@ backups/
 migrations/
 out/
 .permimplrc
+.vscode/
