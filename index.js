@@ -10,6 +10,7 @@ var stat = require('./lib/utils/stat');
 var init = require('./lib/commands/init');
 var up = require('./lib/commands/up');
 var backup = require('./lib/commands/backup');
+var restore = require('./lib/commands/restore');
 var colors = require('colors/safe');
 var factory = require('./lib/factory');
 
@@ -63,9 +64,9 @@ function main(config) {
     map[dbConfig.name.toLowerCase()] = dbConfig;
   }
 
-  if (options.db) {
+  if (options.database) {
     config.databases = config.databases.filter(
-      x => x.name === options.db
+      x => x.name === options.database
     );
   }
 
@@ -81,10 +82,27 @@ function main(config) {
     backup(config, options.output, options.outputFile).catch(e => {
       log.error(e.stack);
     });
+  } else if (/^restore/i.test(options.command)) {
+    if (!options.database) {
+      log.error('"--database" options missing');
+      process.exit(1);
+    }
+    if (!options.input) {
+      log.error('"--input" options missing');
+      process.exit(1);
+    }
+    restore(
+      config,
+      options.database,
+      options.input,
+      options.dropDatabase
+    ).catch(e => {
+      log.error(e.stack);
+    });
   }
 }
 
-if (!/^(init|up|backup)$/i.test(options.command)) {
+if (!/^(init|up|backup|restore)$/i.test(options.command)) {
   log.error('Error: unknown command \'%s\'', options.command);
   return;
 }

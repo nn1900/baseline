@@ -27,15 +27,23 @@ Then, type `baseline --help` to see how to use it as below:
 Usage: baseline <command> [options]
 
 Commands:
-  init  init the baselines of configured databases
-  up    migrate the configured databases up from the baselines
+  init     init the baselines of configured databases
+  up       migrate the configured databases up from the baselines
+  backup   backup the configured databases
+  restore  restore the specified configured database
 
 Options:
-  --config, -c  the database configurations to use with baseline
-  --force, -f   used with init command, force init if a baseline already exists
-  --log-level   logging level: verbose (default), debug, info, warn, error
-  --help        show help information
-  --version     Show version number
+  --config, -c      the database configurations to use with baseline
+  --database, -d    the target database to use with the command
+  --force, -f       used with init command, force init if baseline exists
+  --production, -p  use production config (`.baselinerc.production`)
+  --log-level       logging level: verbose (default), debug, info, warn, error
+  --output, -o      the output path of the database backup
+  --output-file     the output file name of the database backup
+  --input, -i       input backup file used for database restore
+  --drop-database   drop database before restore                       [boolean]
+  --help            show help information
+  --version         Show version number
 
 Copyright 2015, MIT licensed.
 ```
